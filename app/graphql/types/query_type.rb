@@ -1,13 +1,18 @@
 module Types
   class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+    field :all_habbits, [HabbitType], null: true, description: "Return a list of all habbits"
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :habbit, HabbitType, null: true do
+      description "Returns a book by ID"
+      argument :id, ID, required: true
+    end
+
+    def all_habbits
+      Habbit.all
+    end
+
+    def habbit(id:)
+      Habbit.find_by(id: id)
     end
   end
 end
