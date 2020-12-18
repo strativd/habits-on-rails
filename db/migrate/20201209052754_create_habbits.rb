@@ -1,6 +1,6 @@
-class CreateHabbits < ActiveRecord::Migration[6.0]
+class CreateHabits < ActiveRecord::Migration[6.0]
   def change
-    create_table :habbits do |t|
+    create_table :habits do |t|
       t.text :title
       t.integer :goal
       t.string :period

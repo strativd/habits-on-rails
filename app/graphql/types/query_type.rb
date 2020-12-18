@@ -1,18 +1,18 @@
 module Types
   class QueryType < Types::BaseObject
-    field :all_habbits, [HabbitType], null: true, description: "Return a list of all habbits"
+    field :all_habits, [HabitType], null: true, description: "Return a list of all habits"
 
-    field :habbit, HabbitType, null: true do
+    field :habit, HabitType, null: true do
       description "Returns a book by ID"
       argument :id, ID, required: true
     end
 
-    def all_habbits
-      Habbit.all
+    def all_habits
+      Habit.all
     end
 
-    def habbit(id:)
-      Habbit.find_by(id: id)
+    def habit(id:)
+      Habit.find_by(id: id)
     end
   end
 end
