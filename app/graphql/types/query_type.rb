@@ -3,7 +3,7 @@ module Types
     field :all_habits, [HabitType], null: true, description: "Return a list of all habits"
 
     field :habit, HabitType, null: true do
-      description "Returns a book by ID"
+      description "Returns a habit by ID"
       argument :id, ID, required: true
     end
 

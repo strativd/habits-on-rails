@@ -1,0 +1,19 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Table => editable cells
+
+.editable-row .ant-form-item-explain {
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+}
+
+.editable-row .anticon-close-circle {
+  display: none;
+}
+
+.editable-row:hover .anticon-close-circle {
+  display: inline-block;
+}
