@@ -4,16 +4,27 @@
 
 // Table => editable cells
 
-.editable-row .ant-form-item-explain {
+.row--editable .ant-form-item-explain {
   position: absolute;
   top: 100%;
   font-size: 12px;
 }
 
-.editable-row .anticon-close-circle {
+.row--editable .anticon-close-circle {
   display: none;
 }
 
-.editable-row:hover .anticon-close-circle {
+.row--editable__editing .anticon-close-circle,
+.row--editable:hover .anticon-close-circle {
   display: inline-block;
+}
+
+.row--editable .ant-table-cell-fix-left {
+  cursor: pointer;
+}
+
+// Action buttons
+
+button#action-button {
+  margin: 25px 16px;
 }

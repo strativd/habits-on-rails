@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { message } from 'antd';
 
 export const getDatesThisWeek = () => {
   let week = []; 
@@ -14,3 +15,11 @@ export const getDatesThisWeek = () => {
 
   return week;
 }
+
+export const mutationError = errors => {
+  if (errors.length) {
+    errors.forEach(error => message.error(error));
+  } else {
+    message.error('Please try again...');
+  }
+};

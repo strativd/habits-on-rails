@@ -8,7 +8,7 @@ module Types
     end
 
     def all_habits
-      Habit.all
+      Habit.all.sort_by { |habit| habit.created_at }
     end
 
     def habit(id:)

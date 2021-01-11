@@ -27,13 +27,45 @@ export const CREATE_HABIT = gql`
     createHabit(input:{
       title: $title,
       goal: $goal,
-      period: "daily"
+      period: $period
     }) {
       habit {
         id
         title
         slug
         goal
+      }
+    }
+  }
+`;
+
+export const UPDATE_HABIT = gql`
+  mutation updateHabit($id: ID!, $title: String, $goal: Int, $period: String) {
+    updateHabit(input:{
+      id: $id,
+      title: $title,
+      goal: $goal,
+      period: $period
+    }) {
+      habit {
+        id
+        title
+        slug
+        goal
+        period
+      }
+    }
+  }
+`;
+
+export const DELETE_HABIT = gql`
+  mutation deleteHabit($id: ID!) {
+    deleteHabit(input:{
+      id: $id
+    }) {
+      habit {
+        id
+        title
       }
     }
   }
