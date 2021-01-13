@@ -1,4 +1,5 @@
 class Habit < ApplicationRecord
+  has_many :steps, dependent: :destroy
   # Ensure the set_slug is called on create and update actions
   after_validation :set_slug, only: [:create, :update]
 

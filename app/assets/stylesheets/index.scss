@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+// Table => checkbox cells
+
+label.ant-checkbox-wrapper {
+  margin-left: 8px;
+}
+
 // Action buttons
 
 button#action-button {

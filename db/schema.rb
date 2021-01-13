@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_234524) do
+ActiveRecord::Schema.define(version: 2021_01_12_052935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,16 @@ ActiveRecord::Schema.define(version: 2020_12_18_234524) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.bigint "habit_id"
+    t.date "date"
+    t.integer "goal"
+    t.integer "progress"
+    t.boolean "is_complete"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["habit_id"], name: "index_steps_on_habit_id"
+  end
+
+  add_foreign_key "steps", "habits"
 end
