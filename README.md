@@ -1,6 +1,8 @@
-# Building Habits, bit by bit
+# ☑️ haBits
 
-> A personal web project to learn Ruby on Rails, React, and GraphQL.
+Building Habits, bit by bit.
+
+> _A personal web project to learn Ruby on Rails, React, and GraphQL_
 
 ![https://screenshot.click/2021-30-633rd-jsgvg.png](https://screenshot.click/2021-30-633rd-jsgvg.png)
 
