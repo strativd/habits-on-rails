@@ -1,27 +1,24 @@
-# Building Habits (bit by bit)
+# Building Habits, bit by bit
 
 > A personal web project to learn Ruby on Rails, React, and GraphQL.
-
-### HABIT TRACKER
 
 ![https://screenshot.click/2021-30-633rd-jsgvg.png](https://screenshot.click/2021-30-633rd-jsgvg.png)
 
 ## Getting started
 
-Start by cloning the repo locally in your terminal. For example:
+`$ git clone https://github.com/ztratify/habits` (or similar) to clone the repo locally
 
-`$ git clone https://github.com/ztratify/habits`
+`$ cd habits` to open the project
 
-Then:
+`$ yarn install` to download dependencies
 
-1. `$ cd habits` to open the project
-- `$ yarn install` to download dependencies
-- `$ rails db:seed` to seed the database
-- `$ rails s` to start the server
+`$ rails db:seed` to seed the database
 
-**Finally visit [http://localhost:3333](http://localhost:3333) to start building habits!**
+`$ rails s` to start the rails server
 
-# TODO (update with):
+Finally visit [http://localhost:3333](http://localhost:3333) to **start building habits!**
+
+## TODO (update with):
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
