@@ -51,6 +51,7 @@ const HabitTable = () => {
           editRow={editRow}
           habitRecord={record}
           columnCount={index + 1}
+          date={date.formatFull}
         />
       ),
     }));

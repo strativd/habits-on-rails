@@ -12,9 +12,26 @@ module Mutations
 
         if step
           step[:progress] = args[:progress] || step[:progress]
-          step.save
-          { step: step }
+          step.save  
+        else
+          # step does not exist, start recording one!
+          habit = Habit.find_by(id: args[:habit_id])
+
+          if habit
+            step = Step.create(
+              habit_id: habit[:id],
+              date: args[:date],
+              goal: habit[:goal],
+              progress: args[:progress],
+            )
+          else
+            # TODO raise "no habit exists" error
+            return
+          end
         end
+
+        return { step: step }
+
       rescue ActiveRecord::RecordInvalid => invalid
         GraphQL::ExecutionError.new(
           {

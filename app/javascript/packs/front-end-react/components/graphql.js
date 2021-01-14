@@ -1,5 +1,44 @@
 import { gql } from '@apollo/client';
 
+/*** HABIT STEPS & PROGRESS ***/
+
+export const GET_DAILY_STEPS = gql`
+  query dailySteps($habitId: ID!, $date: ISO8601Date!) {
+    dailySteps(
+      habitId: $habitId,
+      date: $date,
+    ) {
+      progress
+      isComplete
+      habit {
+        title
+        id
+      }
+    }
+  }
+`;
+
+export const UPDATE_DAILY_STEPS = gql`
+  mutation updateSteps($habitId: ID!, $date: ISO8601Date!, $progress: Int!) {
+    updateSteps(input:{
+      habitId: $habitId,
+      date: $date,
+      progress: $progress,
+    }) {
+      step {
+        progress
+        isComplete
+        habit {
+          title
+          id
+        }
+      }
+    }
+  }
+`;
+
+/*** HABITS ***/
+
 export const ALL_HABITS = gql`
   query allHabits {
     allHabits {
