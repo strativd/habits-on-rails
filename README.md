@@ -1,4 +1,4 @@
-# ☑️ haBits
+# HaBits ☑
 
 Building Habits, bit by bit.
 
