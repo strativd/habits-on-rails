@@ -45,6 +45,7 @@ const HabitTable = () => {
       title: renderHeader(date),
       dataIndex: date.formatFull,
       width: '10%',
+      shouldCellUpdate: (_, prevRecord) => isEditing(prevRecord) || index === 0,
       render: (_, record) => (
         <HabitBits
           editing={isEditing(record)}

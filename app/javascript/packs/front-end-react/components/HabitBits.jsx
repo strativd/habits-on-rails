@@ -3,7 +3,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { Checkbox } from 'antd';
 
 import { GET_DAILY_STEPS, UPDATE_DAILY_STEPS } from './graphql';
-import { mutationError } from '../helpers';
+import { errorMessages } from '../helpers';
 
 const HabitBits = ({
   editing,
@@ -14,24 +14,26 @@ const HabitBits = ({
 }) => {
   const [progress, setProgress] = useState(0);
 
-  const { loading, error, data } = useQuery(GET_DAILY_STEPS, {
-    variables: {
-      habitId: habitRecord.id,
-      date,
-    },
-    onCompleted: ({dailySteps}) => {
-      let habitProgress = dailySteps ? dailySteps.progress : 0;
-      setProgress(habitProgress);
-    },
-    onError: (data) => {
-      console.log(data);
-    }
-  });
+  if (habitRecord.key !== 'new') {
+    const { loading, error, data } = useQuery(GET_DAILY_STEPS, {
+      variables: {
+        habitId: habitRecord.id,
+        date,
+      },
+      onCompleted: ({dailySteps}) => {
+        let habitProgress = dailySteps ? dailySteps.progress : 0;
+        setProgress(habitProgress);
+      },
+      onError: (data) => {
+        console.log(data);
+      }
+    });
+  }
 
   const [
     updateSteps, { updateLoading, updateError }
   ] = useMutation(UPDATE_DAILY_STEPS, {
-    onError: res => mutationError(res.errors),
+    onError: res => errorMessages(res.errors),
   });
 
   const isFirstColumn = columnCount === 1;

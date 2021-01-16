@@ -3,7 +3,7 @@ import { message, Button } from 'antd';
 import { useMutation } from '@apollo/client';
 
 import { CREATE_HABIT, UPDATE_HABIT } from './graphql';
-import { mutationError } from '../helpers';
+import { errorMessages } from '../helpers';
 
 const ActionButton = ({
   loading,
@@ -21,14 +21,14 @@ const ActionButton = ({
   const [
     createHabit, { createLoading, createError }
   ] = useMutation(CREATE_HABIT, {
-    onError: res => mutationError(res.errors),
+    onError: res => errorMessages(res.errors),
     onCompleted: data => updateTableData(data.createHabit.habit),
   });
 
   const [
     updateHabit, { updateLoading, updateError }
   ] = useMutation(UPDATE_HABIT, {
-    onError: res => mutationError(res.errors),
+    onError: res => errorMessages(res.errors),
     onCompleted: data => updateTableData(data.updateHabit.habit),
   });
 

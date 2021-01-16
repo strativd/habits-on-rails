@@ -16,7 +16,7 @@ export const getDatesThisWeek = () => {
   return week;
 }
 
-export const mutationError = errors => {
+export const errorMessages = errors => {
   if (errors.length) {
     errors.forEach(error => message.error(error));
   } else {

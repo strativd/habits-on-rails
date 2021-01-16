@@ -4,7 +4,7 @@ import { CloseCircleFilled } from '@ant-design/icons';
 import { useMutation } from '@apollo/client';
 
 import { DELETE_HABIT } from './graphql';
-import { mutationError } from '../helpers';
+import { errorMessages } from '../helpers';
 
 const DestroyButton = ({
   record,
@@ -17,7 +17,7 @@ const DestroyButton = ({
   const [
     deleteHabitMutation, { loadingMutation, errorMutation }
   ] = useMutation(DELETE_HABIT, {
-    onError: res => mutationError(res.errors),
+    onError: res => errorMessages(res.errors),
     onCompleted: data => deleteHabit(data.deleteHabit.habit),
   });
 
