@@ -22,7 +22,7 @@ Finally visit [http://localhost:3333](http://localhost:3333) to **start building
 
 ## GraphQL
 
-Explore the GraphQL Schema using Graphiql interface at [http://localhost:3333/graphiql](http://localhost:3333/graphiql)
+Explore GraphQL Schema using _graphiql_ interface: [http://localhost:3333/graphiql](http://localhost:3333/graphiql)
 
 ### Queries
 
@@ -40,7 +40,7 @@ query habitsAndSteps {
     period
     slug
     steps (
-    	order: DATE
+      order: DATE
       startDate: "2021-11-11"
       endDate: "2021-11-13"
     ) {
@@ -97,9 +97,9 @@ Delete Habit:
 
 ```graphql
 mutation deleteHabit {
-  deleteHabit(
-    input:{id: 11}
-  ) {
+  deleteHabit(input:{
+    id: 11
+  }) {
     habit {
       id
       slug
@@ -131,7 +131,7 @@ mutation createSteps {
 }
 ```
 
-Update Steps:
+Update Habit Steps (record progress):
 
 ```graphql
 mutation updateSteps {
