@@ -3,7 +3,7 @@ module Mutations
     field :step, Types::HabitStepsType, null: false
 
     argument :habit_id, ID, required: true
-    argument :date, GraphQL::Types::ISO8601Date, required: true
+    argument :date, Types::DateType, required: true
     argument :progress, Integer, required: true
 
     def resolve(args)

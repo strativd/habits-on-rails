@@ -1,22 +1,44 @@
 import { gql } from '@apollo/client';
 
-/*** HABIT STEPS & PROGRESS ***/
+/*** QUERIES W/ FILTERING ***/
 
-export const GET_DAILY_STEPS = gql`
-  query dailySteps($habitId: ID!, $date: ISO8601Date!) {
-    dailySteps(
-      habitId: $habitId,
-      date: $date,
+export const GET_HABITS = gql`
+  query habits($id: ID, $orderBy: HabitsOrder, $query: String, $period: String) {
+    habits (
+      id: $id
+      order: $orderBy
+      search: $query
+      period: $period
     ) {
-      progress
-      isComplete
-      habit {
-        title
-        id
-      }
+      id
+      title
+      goal
+      period
+      slug
     }
   }
 `;
+
+export const GET_STEPS = gql`
+  query steps($id: ID, $habitId: ID, $orderBy: StepsOrder, $date: ISO8601Date, $startDate: ISO8601Date, $endDate: ISO8601Date) {
+    steps(
+      id: $id
+      habitId: $habitId
+      date: $date
+      startDate: $startDate
+      endDate: $endDate
+      order: $orderBy
+    ) {
+      habitId
+      date
+      goal
+      progress
+      isComplete
+    }
+  }
+`;
+
+/*** MUTATIONS ***/
 
 export const UPDATE_DAILY_STEPS = gql`
   mutation updateSteps($habitId: ID!, $date: ISO8601Date!, $progress: Int!) {
@@ -33,30 +55,6 @@ export const UPDATE_DAILY_STEPS = gql`
           id
         }
       }
-    }
-  }
-`;
-
-/*** HABITS ***/
-
-export const ALL_HABITS = gql`
-  query allHabits {
-    allHabits {
-      goal
-      title
-      period
-      slug
-      id
-    }
-  }
-`;
-
-export const GET_HABIT = gql`
-  query habit($habitId: ID!) {
-    habit(id: $habitId) {
-      title
-      goal
-      createdAt
     }
   }
 `;

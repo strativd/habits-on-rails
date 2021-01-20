@@ -5,8 +5,8 @@ module Types
     field :goal, Integer, null: true
     field :period, String, null: true
     field :slug, String, null: true
-    field :steps, [Types::HabitStepsType], null: true
-    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :steps, resolver: Resolvers::StepsSearch, null: true
+    field :created_at, Types::DateTimeType, null: false
+    field :updated_at, Types::DateTimeType, null: false
   end
 end

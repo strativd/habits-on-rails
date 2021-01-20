@@ -6,7 +6,7 @@ import ActionButton from './ActionButton';
 import DestroyButton from './DestroyButton';
 import EditableCell from './EditableCell';
 import HabitBits from './HabitBits';
-import { ALL_HABITS } from './graphql';
+import { GET_HABITS } from './graphql';
 import { getDatesThisWeek } from '../helpers';
 
 const datesThisWeek = getDatesThisWeek();
@@ -16,16 +16,22 @@ const HabitTable = () => {
   const [editRow, setEditRow] = useState({});
   const [preEdit, setPreEdit] = useState({});
 
-  const {loading, error, data} = useQuery(ALL_HABITS, {
-    onCompleted: (data) => setTableData(data.allHabits.map(habit => {
-      let habitRecord = { ...habit}
+  const {loading, error, data} = useQuery(GET_HABITS, {
+    onCompleted: (data) => queryHabitsCompleted(data.habits),
+  });
+
+  const queryHabitsCompleted = habits => {
+    const habitList = habits.map(habit => {
+      let habitRecord = { ...habit };
 
       habitRecord['key'] = habit.id;
       datesThisWeek.forEach(date => habitRecord[date.formatFull] = habit.goal);
-
+      
       return habitRecord;
-    })),
-  });
+    });
+
+    setTableData(habitList);
+  };
 
   if (error) console.log(`❗ ERROR: ${error}`);
   

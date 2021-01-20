@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { Checkbox } from 'antd';
 
-import { GET_DAILY_STEPS, UPDATE_DAILY_STEPS } from './graphql';
+import { GET_STEPS, UPDATE_DAILY_STEPS } from './graphql';
 import { errorMessages } from '../helpers';
 
 const HabitBits = ({
@@ -15,19 +15,19 @@ const HabitBits = ({
   const [progress, setProgress] = useState(0);
 
   if (habitRecord.key !== 'new') {
-    const { loading, error, data } = useQuery(GET_DAILY_STEPS, {
+    const { loading, error, data } = useQuery(GET_STEPS, {
       variables: {
         habitId: habitRecord.id,
         date,
       },
-      onCompleted: ({dailySteps}) => {
-        let habitProgress = dailySteps ? dailySteps.progress : 0;
-        setProgress(habitProgress);
-      },
-      onError: (data) => {
-        console.log(data);
-      }
+      onCompleted: (data) => queryStepsCompleted(data.steps),
+      onError: (data) => console.log(data),
     });
+  }
+
+  const queryStepsCompleted = steps => {
+    let dailyProgress = steps.length ? steps[0].progress : 0;
+    setProgress(dailyProgress);
   }
 
   const [
