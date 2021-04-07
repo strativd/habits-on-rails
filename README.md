@@ -1,5 +1,5 @@
 <div align="center">
-  <img title="HaBits logo" alt="HaBits logo" width="100px" src="/app/assets/images/habits_large.png">
+  <img title="haBits logo" alt="haBits logo" width="100px" src="/app/assets/images/habits_large.png">
 </div>
 <div align="center">
   <img title="React.js" alt="React logo" width="60px" src="/app/assets/images/logo_react.webp">
@@ -7,7 +7,7 @@
   <img title="GraphQL" alt="GraphQL logo" width="60px" src="/app/assets/images/logo_graphql.png">
 </div>
 
-# HaBits ☑
+# haBits ☑
 
 Building Habits, bit by bit.
 
