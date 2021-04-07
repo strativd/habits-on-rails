@@ -1,5 +1,5 @@
 <div align="center">
-  <img title="haBits logo" alt="haBits logo" width="100px" src="/app/assets/images/habits_large.png">
+  <img title="haBits logo" alt="haBits logo" width="140px" src="/app/assets/images/habits_medium.png">
 </div>
 <div align="center">
   <img title="React.js" alt="React logo" width="60px" src="/app/assets/images/logo_react.webp">
@@ -9,7 +9,7 @@
 
 # haBits ☑
 
-Building Habits, bit by bit.
+Building habits, bit by bit.
 
 > _A personal web project to learn Ruby on Rails, React, and GraphQL_
 
