@@ -1,3 +1,12 @@
+<div align="center">
+  <img alt="HaBits logo" width="200px" src="/app/assets/images/habits_large.png">
+</div>
+<div align="center">
+  <img alt="React logo" width="100px" src="/app/assets/images/logo_react.webp">
+  <img alt="Rails logo" width="180px" src="/app/assets/images/logo_rails.png">
+  <img alt="GraphQL logo" width="100px" src="/app/assets/images/logo_graphql.png">
+</div>
+
 # HaBits ☑
 
 Building Habits, bit by bit.
