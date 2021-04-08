@@ -21,11 +21,17 @@ Building habits, bit by bit.
 
 `$ cd habits` to open the project
 
-`$ yarn install` to download dependencies
+`$ yarn install` to download node dependencies
 
-`$ rails db:seed` to seed the database
+> Errors? Make sure you [install Ruby on Rails first](https://gorails.com/setup)...
 
-`$ rails s` to start the rails server
+`$ bundle install` to download ruby gems
+
+`$ rake db:create ` to build a local database
+
+`$ rake db:seed` to seed the database with data
+
+`$ rails s` to start the server and web app
 
 Finally visit [http://localhost:3333](http://localhost:3333) to **start building habits!**
 
