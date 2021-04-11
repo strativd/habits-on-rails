@@ -1,5 +1,5 @@
 <div align="center">
-  <img title="haBits logo" alt="haBits logo" width="140px" src="/app/assets/images/habits_medium.png">
+  <img title="haBits logo" alt="haBits logo" width="140px" src="/lib/assets/images/habits_medium.png">
 </div>
 <div align="center">
   <img title="React.js" alt="React logo" width="60px" src="/lib/assets/images/logo_react.webp">
@@ -13,7 +13,7 @@
 
 Building habits, bit by bit.
 
-<img alt="haBits habit tracking screenshot" width="100%" src="/lib/assets/images/habits_screenshot.png">
+<img alt="haBits habit tracking screenshot" width="100%" src="/lib/assets/images/habits_tracker_screenshot.png">
 
 ## Getting started
 
