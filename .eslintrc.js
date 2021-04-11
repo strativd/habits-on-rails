@@ -24,5 +24,6 @@ module.exports = {
     'prefer-const': 0,
     'func-names': ['error', 'as-needed'],
     'no-shadow': 'error',
+    'quotes': ['error', 'single']
   },
 };

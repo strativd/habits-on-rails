@@ -1,2 +1,5 @@
 .eslintrc.js
+config/webpack/*
+
 app/javascript/channels/*
+app/javascript/packs/application.js
