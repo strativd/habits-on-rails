@@ -68,7 +68,7 @@ const HabitTable = () => {
 
   const columns = [
     {
-      title: 'HABITS',
+      title: '',
       dataIndex: 'title',
       width: '25%',
       fixed: true,
