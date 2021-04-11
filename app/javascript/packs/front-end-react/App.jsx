@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { ApolloProvider } from "@apollo/client"
+import { ApolloProvider } from '@apollo/client'
 
-import { client } from "./client"
+import { client } from './client'
 import Frame from './Frame';
-
-import 'antd/dist/antd.css';
-import 'antd/dist/antd.dark.css';
 
 const App = () => {
   return (

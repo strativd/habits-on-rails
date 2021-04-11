@@ -4,23 +4,25 @@
 
 // Table => editable cells
 
-.row--editable .ant-form-item-explain {
-  position: absolute;
-  top: 100%;
-  font-size: 12px;
-}
+.row--editable {
+  .ant-form-item-explain {
+    position: absolute;
+    top: 100%;
+    font-size: 12px;
+  }
 
-.row--editable .anticon-close-circle {
-  display: none;
+  .anticon-close-circle {
+    display: none;
+  }
+
+  .ant-table-cell-fix-left {
+    cursor: pointer;
+  }
 }
 
 .row--editable__editing .anticon-close-circle,
 .row--editable:hover .anticon-close-circle {
   display: inline-block;
-}
-
-.row--editable .ant-table-cell-fix-left {
-  cursor: pointer;
 }
 
 // Table => checkbox cells
