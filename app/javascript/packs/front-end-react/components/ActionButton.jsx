@@ -13,8 +13,6 @@ const ActionButton = ({
   tableData,
   setTableData,
 }) => {
-  if (loading) return null;
-
   const editingMode = !!editRow.key; // check if key exists
   const addingHabit = editRow.key === 'new';
 
@@ -32,28 +30,30 @@ const ActionButton = ({
     onCompleted: data => updateTableData(data.updateHabit.habit),
   });
 
+  if (loading) return null;
+
   const updateTableData = habit => {
     if (habit) {
-      let action;
+      let messageText;
       const newHabit = { ...habit, key: habit.id };
       const newData = [...tableData];
       // Get index of habit being saved and check if it exists
-      const index = newData.findIndex(habit => newHabit.id === habit.id);
+      const index = newData.findIndex(record => newHabit.id === record.id);
 
       if (index > -1) {
         newData[index] = newHabit;
-        action = 'UPDATED';
+        messageText = 'updated!';
       } else {
         // Remove editing row and add habit
         let indexLastRow = newData.length - 1;
         newData[indexLastRow] = newHabit;
-        action = 'ADDED';
+        messageText = 'saved!';
       }
       // Update state of parent component
       setTableData(newData);
       setPreEdit({});
       setEditRow({});
-      message.success(`${action} – ${habit.title}`);
+      message.success(`${habit.title} ${messageText}`);
     }
   }
 

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Input } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 

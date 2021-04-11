@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { Checkbox } from 'antd';
 
@@ -14,16 +14,15 @@ const HabitBits = ({
 }) => {
   const [progress, setProgress] = useState(0);
 
-  if (habitRecord.key !== 'new') {
-    const { loading, error, data } = useQuery(GET_STEPS, {
-      variables: {
-        habitId: habitRecord.id,
-        date,
-      },
-      onCompleted: (data) => queryStepsCompleted(data.steps),
-      onError: (data) => console.log(data),
-    });
-  }
+  const { loading, error, data } = useQuery(GET_STEPS, {
+    skip: habitRecord.key === 'new',
+    variables: {
+      habitId: habitRecord.id,
+      date,
+    },
+    onCompleted: (res) => queryStepsCompleted(res.steps),
+    onError: (res) => console.log(res),
+  });
 
   const queryStepsCompleted = steps => {
     let dailyProgress = steps.length ? steps[0].progress : 0;
@@ -53,11 +52,11 @@ const HabitBits = ({
     })
   }
 
-  const renderBits = (goal, editing) => {
+  const renderBits = (goal, editMode) => {
     let bits = [];
 
     for (let i = 0; i < goal; i++) {
-      bits.push(<Checkbox key={i} checked={editing || progress > i} onClick={e => handleClick(e)} />)
+      bits.push(<Checkbox key={i} checked={editMode || progress > i} onClick={e => handleClick(e)} />)
     }
 
     return bits;

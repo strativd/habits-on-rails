@@ -7,7 +7,7 @@
   <img title="GraphQL" alt="GraphQL logo" width="60px" src="/app/assets/images/logo_graphql.png">
 </div>
 
-# haBits ☑
+# haBits ✅
 
 Building habits, bit by bit.
 
