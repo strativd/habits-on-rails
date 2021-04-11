@@ -9,9 +9,9 @@
 
 # haBits ✅
 
-Building habits, bit by bit.
+> A personal web project to practice React, GraphQL, Ruby on Rails, and good habits!
 
-> _A personal web project to learn Ruby on Rails, React, and GraphQL_
+Building habits, bit by bit.
 
 <img alt="haBits habit tracking screenshot" width="100%" src="/lib/assets/images/habits_screenshot.png">
 
