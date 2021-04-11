@@ -2,9 +2,9 @@
   <img title="haBits logo" alt="haBits logo" width="140px" src="/app/assets/images/habits_medium.png">
 </div>
 <div align="center">
-  <img title="React.js" alt="React logo" width="60px" src="/app/assets/images/logo_react.webp">
-  <img title="Ruby On Rails" alt="Roby On Rails logo" width="120px" src="/app/assets/images/logo_rails.png">
-  <img title="GraphQL" alt="GraphQL logo" width="60px" src="/app/assets/images/logo_graphql.png">
+  <img title="React.js" alt="React logo" width="60px" src="/lib/assets/images/logo_react.webp">
+  <img title="Ruby On Rails" alt="Roby On Rails logo" width="120px" src="/lib/assets/images/logo_rails.png">
+  <img title="GraphQL" alt="GraphQL logo" width="60px" src="/lib/assets/images/logo_graphql.png">
 </div>
 
 # haBits ✅
@@ -13,7 +13,7 @@ Building habits, bit by bit.
 
 > _A personal web project to learn Ruby on Rails, React, and GraphQL_
 
-![https://screenshot.click/2021-30-633rd-jsgvg.png](https://screenshot.click/2021-30-633rd-jsgvg.png)
+<img alt="haBits habit tracking screenshot" width="100%" src="/lib/assets/images/habits_screenshot.png">
 
 ## Getting started
 
