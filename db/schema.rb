@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_01_24_181441) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "habits", force: :cascade do |t|
+  create_table "habits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "title"
     t.integer "goal"
     t.string "period"
@@ -26,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_181441) do
     t.integer "order"
   end
 
-  create_table "steps", force: :cascade do |t|
+  create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "habit_id"
     t.date "date"
     t.integer "goal"
@@ -34,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_181441) do
     t.boolean "is_complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["date", "habit_id"], name: "index_steps_on_date_and_habit_id", unique: true
     t.index ["habit_id"], name: "index_steps_on_habit_id"
   end
 
