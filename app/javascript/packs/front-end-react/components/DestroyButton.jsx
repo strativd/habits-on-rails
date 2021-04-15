@@ -45,7 +45,10 @@ const DestroyButton = ({
     }
     
     setTableData(newData);
-    setEditRow({});
+    setTimeout(() => {
+      // wait for PopConfirm animation to finish
+      setEditRow({});
+    }, 300);
   }
 
   return editing ? (
