@@ -23,16 +23,24 @@ Building habits, bit by bit.
 
 `$ bundle install` to download ruby gems
 
-> **Errors?** Make sure you [install Ruby on Rails first...](https://gorails.com/setup)
+> **Errors?**
+
+> Make sure you [install Ruby on Rails first...](https://gorails.com/setup)
+
 > `ruby` '2.6.3'
+
 > `rails` '6.0.3'
 
 `$ yarn install` to download node dependencies
 
 `$ rails db:create && rails db:migrate && rails db:seed` to build a local database and seed it with data
 
-> **Errors?** Make sure you [install MySQL database first...](https://gist.github.com/operatino/392614486ce4421063b9dece4dfe6c21)
+> **Errors?**
+
+> Make sure you [install MySQL database first...](https://gist.github.com/operatino/392614486ce4421063b9dece4dfe6c21)
+
 > `$ brew install mysql@5.7` and address any "Caveats" messages
+
 > `$ brew services start mysql@5.7` to run mysql locally
 
 `$ rails s` to start the server and web app!
