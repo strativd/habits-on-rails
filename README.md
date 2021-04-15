@@ -7,11 +7,9 @@
   <img title="GraphQL" alt="GraphQL logo" width="60px" src="/lib/assets/images/logo_graphql.png">
 </div>
 
-# haBits ✅
+# ✅ haBits — building habits, bit by bit.
 
-> A personal web project to practice React, GraphQL, Ruby on Rails, and good habits!
-
-Building habits, bit by bit.
+A personal web project to practice React, GraphQL, Ruby on Rails, and good habits...
 
 <img alt="haBits habit tracking screenshot" width="100%" src="/lib/assets/images/habits_tracker_screenshot.png">
 

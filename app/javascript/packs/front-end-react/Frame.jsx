@@ -23,7 +23,8 @@ const Frame = () => {
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        <a href="https://github.com/ztratify/habits" target="_blank" rel="noreferrer">haBits ✅ building habits, bit by bit.</a>
+        <span role="img" aria-label="checkmark">✅ </span>
+        <a href="https://github.com/ztratify/habits" target="_blank" rel="noreferrer">haBits — building habits, bit by bit.</a>
       </Footer>
     </Layout>
   )
