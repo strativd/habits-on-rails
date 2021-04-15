@@ -21,17 +21,21 @@ Building habits, bit by bit.
 
 `$ cd habits` to open the project
 
-`$ yarn install` to download node dependencies
-
-> Errors? Make sure you [install Ruby on Rails first](https://gorails.com/setup)...
-
 `$ bundle install` to download ruby gems
 
-`$ rake db:create ` to build a local database
+> **Errors?** Make sure you [install Ruby on Rails first...](https://gorails.com/setup)
+> `ruby` '2.6.3'
+> `rails` '6.0.3'
 
-`$ rake db:seed` to seed the database with data
+`$ yarn install` to download node dependencies
 
-`$ rails s` to start the server and web app
+`$ rails db:create && rails db:migrate && rails db:seed` to build a local database and seed it with data
+
+> **Errors?** Make sure you [install MySQL database first...](https://gist.github.com/operatino/392614486ce4421063b9dece4dfe6c21)
+> `$ brew install mysql@5.7` and address any "Caveats" messages
+> `$ brew services start mysql@5.7` to run mysql locally
+
+`$ rails s` to start the server and web app!
 
 Finally visit [http://localhost:3333](http://localhost:3333) to **start building habits!**
 
